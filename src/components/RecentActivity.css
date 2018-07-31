@@ -1,0 +1,21 @@
+.recent-activity .list-container {
+    padding: 20px;
+}
+
+.recent-activity li {
+    color: #f4f4f4;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.recent-activity .winner-name {
+    color: #69BB7B;
+}
+
+.recent-activity .loser-name {
+    color: #f53d3d;
+}
+
+.recent-activity .activity-time {
+    color: #747474;
+}

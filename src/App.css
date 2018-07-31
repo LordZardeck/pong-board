@@ -1,0 +1,15 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.App .contents {
+    flex: 1;
+    display: flex;
+    padding-left: 8.33333%;
+    padding-right: 8.33333%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}

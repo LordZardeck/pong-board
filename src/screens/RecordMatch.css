@@ -1,0 +1,43 @@
+.record-match {
+    display: flex;
+    flex: 1;
+    padding-top: 8.33333%;
+    padding-bottom: calc(8.33333% + 56px);
+}
+
+.record-match > * {
+    flex: 1;
+}
+
+.record-match > div > .streaks {
+    display: flex;
+}
+
+.record-match > div > .streaks > * {
+    flex: 1;
+}
+
+.record-match .match-player {
+    max-width: 340px;
+}
+
+@media (max-width: 1280px) {
+    .record-match {
+        flex-wrap: wrap;
+        align-content: baseline;
+        justify-content: space-evenly;
+    }
+
+    .record-match .point-tracker {
+        align-items: center;
+        order: -1;
+        min-width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .record-match .match-player {
+        min-width: 100%;
+    }
+}

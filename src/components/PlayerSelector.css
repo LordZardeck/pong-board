@@ -1,0 +1,12 @@
+.choose-player ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-player ul li {
+    width: 50%;
+    text-align: center;
+}

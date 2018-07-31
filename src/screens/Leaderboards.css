@@ -1,0 +1,18 @@
+.leaderboards {
+    display: flex;
+    flex: 1;
+    padding-top: 8.33333%;
+    padding-bottom: calc(8.33333% + 56px);
+}
+
+.leaderboards > * {
+    flex: 1;
+}
+
+.leaderboards > div > .streaks {
+    display: flex;
+}
+
+.leaderboards > div > .streaks > * {
+    flex: 1;
+}
