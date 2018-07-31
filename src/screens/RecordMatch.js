@@ -3,6 +3,7 @@ import './RecordMatch.css';
 import MatchPlayer from '../components/MatchPlayer';
 import PointTracker from '../components/PointTracker';
 import firebase from '../firebase';
+import Elo from 'arpad';
 
 class RecordMatch extends Component {
     state = {
@@ -36,6 +37,11 @@ class RecordMatch extends Component {
         const leftPlayerId = this.leftPlayer.current.getPlayerId(),
             rightPlayerId = this.rightPlayer.current.getPlayerId();
 
+        const playerData = {};
+
+        playerData[leftPlayerId] = this.leftPlayer.current.getPlayer();
+        playerData[rightPlayerId] = this.rightPlayer.current.getPlayer();
+
         if (leftPlayerId === null || rightPlayerId === null || leftPlayerId === rightPlayerId) {
             return;
         }
@@ -46,20 +52,36 @@ class RecordMatch extends Component {
             timestamp: Date.now()
         };
 
-        matchResult.winner = this.getPlayerReference(
-            matchResult.winningScore === leftPoint ? leftPlayerId : rightPlayerId
-        );
-        matchResult.loser = this.getPlayerReference(
-            matchResult.losingScore === leftPoint ? leftPlayerId : rightPlayerId
-        );
+        const winnerId = matchResult.winningScore === leftPoint ? leftPlayerId : rightPlayerId;
+        const loserId = matchResult.losingScore === leftPoint ? leftPlayerId : rightPlayerId;
+
+        const winnerDocRef = firebase.firestore().collection('players').doc(winnerId);
+        const loserDocRef = firebase.firestore().collection('players').doc(loserId);
+
+        firebase.firestore()
+                .runTransaction(
+                    transaction => {
+                        const elo = new Elo(),
+                            winnerScore = playerData[winnerId].score,
+                            loserScore = playerData[loserId].score;
+
+                        transaction.update(winnerDocRef, {score: elo.newRatingIfWon(winnerScore, loserScore)});
+                        transaction.update(loserDocRef, {score: elo.newRatingIfLost(loserScore, winnerScore)});
+
+                        return Promise.resolve();
+                    }
+                );
+
+        matchResult.winner = this.getPlayerReference(winnerId);
+        matchResult.loser = this.getPlayerReference(loserId);
 
         firebase.firestore().collection('matches').add(matchResult);
     }
 
     onMatchReset() {
         this.setState({leftPlayerIsWinning: true, rightPlayerIsWinning: true});
-        this.leftPlayer.current.clearPlayer();
-        this.rightPlayer.current.clearPlayer();
+        this.leftPlayer.current.selectPlayer(null, {});
+        this.rightPlayer.current.selectPlayer(null, {});
     }
 
     onLeftPlayerSelect(playerId, playerData) {

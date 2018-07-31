@@ -28,17 +28,30 @@ class Rankings extends Component {
         this.unregisterCollectionObserver();
     }
 
+    getSortedPlayerCollection() {
+        let players = Object.keys(this.state.playerCollection).map(playerId => {
+            let player = this.state.playerCollection[playerId];
+            player.playerId = playerId;
+
+            return player;
+        });
+
+        players.sort((leftPlayer, rightPlayer) => rightPlayer.score - leftPlayer.score);
+
+        return players;
+    }
+
     render() {
         return (
             <div className="rankings">
                 <Card title="Player Rankings">
                     <ul>
-                        {Object.keys(this.state.playerCollection).map(playerId => (
-                            <li key={playerId}>
-                                <img src={this.state.playerCollection[playerId].avatar} alt="avatar"/>
+                        {this.getSortedPlayerCollection().map(player => (
+                            <li key={player.playerId}>
+                                <img src={player.avatar} alt="avatar"/>
                                 <span
-                                    className="player-name">{getAbbreviatedPlayerName(this.state.playerCollection[playerId])}</span>
-                                <span className="ranking-badge">{this.state.playerCollection[playerId].score}</span>
+                                    className="player-name">{getAbbreviatedPlayerName(player)}</span>
+                                <span className="ranking-badge">{player.score}</span>
                             </li>
                         ))}
                     </ul>
