@@ -7,7 +7,9 @@ import firebase from '../firebase';
 class RecordMatch extends Component {
     state = {
         leftPlayerIsWinning: true,
-        rightPlayerIsWinning: true
+        rightPlayerIsWinning: true,
+        leftPlayerAvatar: void(0),
+        rightPlayerAvatar: void(0)
     };
 
     constructor(props) {
@@ -60,14 +62,40 @@ class RecordMatch extends Component {
         this.rightPlayer.current.clearPlayer();
     }
 
+    onLeftPlayerSelect(playerId, playerData) {
+        let leftPlayerAvatar = void(0);
+
+        if (typeof playerData === 'object' && playerData.avatar !== void(0)) {
+            leftPlayerAvatar = playerData.avatar;
+        }
+
+        this.setState({leftPlayerAvatar});
+    }
+
+    onRightPlayerSelect(playerId, playerData) {
+        let rightPlayerAvatar = void(0);
+
+        if (typeof playerData === 'object' && playerData.avatar !== void(0)) {
+            rightPlayerAvatar = playerData.avatar;
+        }
+
+        this.setState({rightPlayerAvatar});
+    }
+
     render() {
         return (
             <div className="record-match">
-                <MatchPlayer ref={this.leftPlayer} isWinning={this.state.leftPlayerIsWinning}/>
+                <MatchPlayer ref={this.leftPlayer}
+                             onPlayerSelect={(playerId, playerData) => this.onLeftPlayerSelect(playerId, playerData)}
+                             isWinning={this.state.leftPlayerIsWinning}/>
                 <PointTracker onMatchReset={() => this.onMatchReset()}
                               onMatchComplete={(leftPoint, rightPoint) => this.onMatchComplete(leftPoint, rightPoint)}
-                              onPointGain={(leftPoint, rightPoint) => this.onPointGain(leftPoint, rightPoint)}/>
-                <MatchPlayer ref={this.rightPlayer} isWinning={this.state.rightPlayerIsWinning}/>
+                              onPointGain={(leftPoint, rightPoint) => this.onPointGain(leftPoint, rightPoint)}
+                              leftPlayerAvatar={this.state.leftPlayerAvatar}
+                              rightPlayerAvatar={this.state.rightPlayerAvatar}/>
+                <MatchPlayer ref={this.rightPlayer}
+                             onPlayerSelect={(playerId, playerData) => this.onRightPlayerSelect(playerId, playerData)}
+                             isWinning={this.state.rightPlayerIsWinning}/>
             </div>
         );
     }

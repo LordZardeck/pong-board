@@ -86,6 +86,9 @@ class PointTracker extends Component {
         return (
             <div className="point-tracker">
                 <div className="scoring">
+                    {this.props.leftPlayerAvatar !== void(0) &&
+                    <img className={this.state.leftScore >= this.state.rightScore ? 'is-winning' : ''}
+                         src={this.props.leftPlayerAvatar} alt="avatar"/>}
                     <input type="tel" onBlur={event => this.onTargetBlur(event.target)}
                            onFocus={event => this.onTargetFocus(event.target)}
                            onChange={event => this.scoreLeft(event.target.value)}
@@ -93,6 +96,9 @@ class PointTracker extends Component {
                     <input type="tel" onBlur={event => this.onTargetBlur(event.target)}
                            onFocus={event => this.onTargetFocus(event.target)}
                            onChange={event => this.scoreRight(event.target.value)} value={this.state.rightScore}/>
+                    {this.props.rightPlayerAvatar !== void(0) &&
+                    <img className={this.state.rightScore >= this.state.leftScore ? 'is-winning' : ''}
+                         src={this.props.rightPlayerAvatar} alt="avatar"/>}
                 </div>
                 <hr/>
                 <button className="reset" onClick={() => this.resetScore()}>Reset Match</button>

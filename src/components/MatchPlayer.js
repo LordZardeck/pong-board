@@ -10,10 +10,6 @@ class MatchPlayer extends Component {
         player: {}
     };
 
-    clearPlayer() {
-        this.setState({playerIsSelected: false, playerId: null});
-    }
-
     getPlayerId() {
         return this.state.playerId;
     }
@@ -21,11 +17,17 @@ class MatchPlayer extends Component {
     onPlayerSelect(playerId, playerData) {
         this.setState(
             {
-                playerIsSelected: true,
+                playerIsSelected: !!(playerId && playerData),
                 playerId,
                 player: playerData
             }
         );
+
+        if (typeof this.props.onPlayerSelect !== 'function') {
+            return;
+        }
+
+        this.props.onPlayerSelect(playerId, playerData);
     }
 
     render() {
@@ -43,7 +45,7 @@ class MatchPlayer extends Component {
                             <dt>Win : Loss</dt>
                             <dd>{this.state.player.wins} : {this.state.player.losses}</dd>
                         </dl>
-                        <button onClick={() => this.clearPlayer()}>Back</button>
+                        <button onClick={() => this.onPlayerSelect(null, {})}>Back</button>
                     </Card>
                 </div>
                 <PlayerSelector onPlayerSelect={(playerId, playerData) => this.onPlayerSelect(playerId, playerData)}/>
