@@ -32,8 +32,12 @@ class PointTracker extends Component {
         this.props.onMatchReset();
     }
 
-    scoreLeft(event) {
-        const leftScore = event.target.value;
+    scoreLeft(value) {
+        const leftScore = parseInt(value, 10);
+
+        if (isNaN(leftScore)) {
+            return;
+        }
 
         this.setState(() => {
             this.notifyPointUpdate(leftScore, this.state.rightScore);
@@ -42,8 +46,12 @@ class PointTracker extends Component {
         });
     }
 
-    scoreRight(event) {
-        const rightScore = event.target.value;
+    scoreRight(value) {
+        const rightScore = parseInt(value, 10);
+
+        if (isNaN(rightScore)) {
+            return;
+        }
 
         this.setState(() => {
             this.notifyPointUpdate(this.state.leftScore, rightScore);
@@ -51,6 +59,16 @@ class PointTracker extends Component {
             return {rightScore};
         });
 
+    }
+
+    onTargetFocus(target) {
+        target.value = null;
+    }
+
+    onTargetBlur(target) {
+        if (isNaN(parseInt(target.value, 10))) {
+            target.value = 0;
+        }
     }
 
     completeMatch() {
@@ -68,8 +86,13 @@ class PointTracker extends Component {
         return (
             <div className="point-tracker">
                 <div className="scoring">
-                    <input type="tel" onChange={event => this.scoreLeft(event)} value={this.state.leftScore}/>
-                    <input type="tel" onChange={event => this.scoreRight(event)} value={this.state.rightScore}/>
+                    <input type="tel" onBlur={event => this.onTargetBlur(event.target)}
+                           onFocus={event => this.onTargetFocus(event.target)}
+                           onChange={event => this.scoreLeft(event.target.value)}
+                           value={this.state.leftScore}/>
+                    <input type="tel" onBlur={event => this.onTargetBlur(event.target)}
+                           onFocus={event => this.onTargetFocus(event.target)}
+                           onChange={event => this.scoreRight(event.target.value)} value={this.state.rightScore}/>
                 </div>
                 <hr/>
                 <button className="reset" onClick={() => this.resetScore()}>Reset Match</button>

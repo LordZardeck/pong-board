@@ -11,7 +11,7 @@ class MatchPlayer extends Component {
     };
 
     clearPlayer() {
-        this.setState({playerIsSelected: false});
+        this.setState({playerIsSelected: false, playerId: null});
     }
 
     getPlayerId() {

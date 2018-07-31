@@ -31,6 +31,13 @@ class RecordMatch extends Component {
     }
 
     onMatchComplete(leftPoint, rightPoint) {
+        const leftPlayerId = this.leftPlayer.current.getPlayerId(),
+            rightPlayerId = this.rightPlayer.current.getPlayerId();
+
+        if (leftPlayerId === null || rightPlayerId === null || leftPlayerId === rightPlayerId) {
+            return;
+        }
+
         const matchResult = {
             winningScore: Math.max(leftPoint, rightPoint),
             losingScore: Math.min(leftPoint, rightPoint),
@@ -38,10 +45,10 @@ class RecordMatch extends Component {
         };
 
         matchResult.winner = this.getPlayerReference(
-            matchResult.winningScore === leftPoint ? this.leftPlayer.current.getPlayerId() : this.rightPlayer.current.getPlayerId()
+            matchResult.winningScore === leftPoint ? leftPlayerId : rightPlayerId
         );
         matchResult.loser = this.getPlayerReference(
-            matchResult.losingScore === leftPoint ? this.leftPlayer.current.getPlayerId() : this.rightPlayer.current.getPlayerId()
+            matchResult.losingScore === leftPoint ? leftPlayerId : rightPlayerId
         );
 
         firebase.firestore().collection('matches').add(matchResult);
