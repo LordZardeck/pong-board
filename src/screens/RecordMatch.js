@@ -65,8 +65,16 @@ class RecordMatch extends Component {
                             winnerScore = playerData[winnerId].score,
                             loserScore = playerData[loserId].score;
 
-                        transaction.update(winnerDocRef, {score: elo.newRatingIfWon(winnerScore, loserScore)});
-                        transaction.update(loserDocRef, {score: elo.newRatingIfLost(loserScore, winnerScore)});
+                        transaction.update(winnerDocRef,
+                                           {
+                                               score: elo.newRatingIfWon(winnerScore, loserScore),
+                                               wins: playerData[winnerId].wins + 1
+                                           });
+                        transaction.update(loserDocRef,
+                                           {
+                                               score: elo.newRatingIfLost(loserScore, winnerScore),
+                                               losses: playerData[loserId].losses + 1
+                                           });
 
                         return Promise.resolve();
                     }

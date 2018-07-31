@@ -34,6 +34,14 @@ class MatchPlayer extends Component {
         this.props.onPlayerSelect(playerId, playerData);
     }
 
+    getMatches(player) {
+        if (player.wins === void(0) || player.losses === void(0)) {
+            return '';
+        }
+
+        return player.wins + player.losses;
+    }
+
     render() {
         return (
             <div className={'match-player' + (this.state.playerIsSelected ? ' player-is-selected' : '')}>
@@ -45,7 +53,7 @@ class MatchPlayer extends Component {
                         <hr/>
                         <dl>
                             <dt>Total Matches:</dt>
-                            <dd>{this.state.player.matches}</dd>
+                            <dd>{this.getMatches(this.state.player)}</dd>
                             <dt>Win : Loss</dt>
                             <dd>{this.state.player.wins} : {this.state.player.losses}</dd>
                         </dl>
