@@ -9,8 +9,8 @@ class RecordMatch extends Component {
     state = {
         leftPlayerIsWinning: true,
         rightPlayerIsWinning: true,
-        leftPlayerAvatar: void(0),
-        rightPlayerAvatar: void(0)
+        leftPlayer: void(0),
+        rightPlayer: void(0)
     };
 
     constructor(props) {
@@ -93,37 +93,55 @@ class RecordMatch extends Component {
     }
 
     onLeftPlayerSelect(playerId, playerData) {
-        let leftPlayerAvatar = void(0);
+        let leftPlayer = void(0);
 
-        if (typeof playerData === 'object' && playerData.avatar !== void(0)) {
-            leftPlayerAvatar = playerData.avatar;
+        if (typeof playerData === 'object' && playerId !== null) {
+            leftPlayer = playerData;
+            leftPlayer.id = playerId;
         }
 
-        this.setState({leftPlayerAvatar});
+        this.setState({leftPlayer});
     }
 
     onRightPlayerSelect(playerId, playerData) {
-        let rightPlayerAvatar = void(0);
+        let rightPlayer = void(0);
 
-        if (typeof playerData === 'object' && playerData.avatar !== void(0)) {
-            rightPlayerAvatar = playerData.avatar;
+        if (typeof playerData === 'object' && playerId !== null) {
+            rightPlayer = playerData;
+            rightPlayer.id = playerId;
         }
 
-        this.setState({rightPlayerAvatar});
+        this.setState({rightPlayer});
+    }
+
+    getExcludedPlayers() {
+        const excludedPlayers = [];
+
+        if (this.state.leftPlayer !== void(0)) {
+            excludedPlayers.push(this.state.leftPlayer.id);
+        }
+
+        if (this.state.rightPlayer !== void(0)) {
+            excludedPlayers.push(this.state.rightPlayer.id);
+        }
+
+        return excludedPlayers;
     }
 
     render() {
         return (
             <div className="record-match">
                 <MatchPlayer ref={this.leftPlayer}
+                             excludedPlayers={this.getExcludedPlayers()}
                              onPlayerSelect={(playerId, playerData) => this.onLeftPlayerSelect(playerId, playerData)}
-                             isWinning={this.state.leftPlayerIsWinning}/>
+                             isWinning={this.state.leftPlayer}/>
                 <PointTracker onMatchReset={() => this.onMatchReset()}
                               onMatchComplete={(leftPoint, rightPoint) => this.onMatchComplete(leftPoint, rightPoint)}
                               onPointGain={(leftPoint, rightPoint) => this.onPointGain(leftPoint, rightPoint)}
                               leftPlayerAvatar={this.state.leftPlayerAvatar}
-                              rightPlayerAvatar={this.state.rightPlayerAvatar}/>
+                              rightPlayerAvatar={this.state.rightPlayer}/>
                 <MatchPlayer ref={this.rightPlayer}
+                             excludedPlayers={this.getExcludedPlayers()}
                              onPlayerSelect={(playerId, playerData) => this.onRightPlayerSelect(playerId, playerData)}
                              isWinning={this.state.rightPlayerIsWinning}/>
             </div>

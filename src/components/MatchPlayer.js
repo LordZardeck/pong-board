@@ -60,7 +60,8 @@ class MatchPlayer extends Component {
                         <button onClick={() => this.selectPlayer(null, {})}>Back</button>
                     </Card>
                 </div>
-                <PlayerSelector onPlayerSelect={(playerId, playerData) => this.selectPlayer(playerId, playerData)}/>
+                <PlayerSelector excludedPlayers={this.props.excludedPlayers}
+                                onPlayerSelect={(playerId, playerData) => this.selectPlayer(playerId, playerData)}/>
             </div>
         );
     }
