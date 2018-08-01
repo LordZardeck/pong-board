@@ -17,22 +17,22 @@
     flex: 1;
 }
 
-.leaderboards .rankings, .leaderboards .recent-activity {
-    min-width: 500px;
-}
-
 @media (max-width: 1280px) {
     .leaderboards {
         flex-wrap: wrap;
         align-content: baseline;
     }
-}
 
-@media (max-width: 768px) {
     .leaderboards .rankings, .leaderboards .recent-activity {
         min-width: 100%;
     }
 
+    .leaderboards .rankings {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
     .leaderboards .recent-activity .list-container ol {
         padding-left: 20px;
     }
