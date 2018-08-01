@@ -138,8 +138,8 @@ class RecordMatch extends Component {
                 <PointTracker onMatchReset={() => this.onMatchReset()}
                               onMatchComplete={(leftPoint, rightPoint) => this.onMatchComplete(leftPoint, rightPoint)}
                               onPointGain={(leftPoint, rightPoint) => this.onPointGain(leftPoint, rightPoint)}
-                              leftPlayerAvatar={this.state.leftPlayerAvatar}
-                              rightPlayerAvatar={this.state.rightPlayer}/>
+                              leftPlayer={this.state.leftPlayer}
+                              rightPlayer={this.state.rightPlayer}/>
                 <MatchPlayer ref={this.rightPlayer}
                              excludedPlayers={this.getExcludedPlayers()}
                              onPlayerSelect={(playerId, playerData) => this.onRightPlayerSelect(playerId, playerData)}
