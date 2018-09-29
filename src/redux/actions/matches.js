@@ -35,6 +35,10 @@ export function subscribeMatchesSnapshot() {
                 return Promise.all([winnerUpdate, loserUpdate]);
             })).then(() => dispatch(receiveMatchesSnapshot(activityCollection)));
         });
+
+        firebase.firestore().collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+            window.matches = snapshot.docs;
+        });
     };
 }
 
@@ -75,12 +79,16 @@ export function completeMatch() {
                     transaction.update(winnerDocRef,
                         {
                             score: elo.newRatingIfWon(winnerScore, loserScore),
-                            wins: playerData[winnerId].wins + 1
+                            wins: playerData[winnerId].wins + 1,
+                            consecutiveWins: playerData[winnerId].consecutiveWins + 1,
+                            consecutiveLosses: 0
                         });
                     transaction.update(loserDocRef,
                         {
                             score: elo.newRatingIfLost(loserScore, winnerScore),
-                            losses: playerData[loserId].losses + 1
+                            losses: playerData[loserId].losses + 1,
+                            consecutiveWins: 0,
+                            consecutiveLosses: playerData[loserId].consecutiveLosses + 1
                         });
 
                     return Promise.resolve();

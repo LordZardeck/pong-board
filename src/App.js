@@ -5,13 +5,15 @@ import RecordMatch from './screens/RecordMatch';
 import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import {Screens} from "./redux/actions/screens";
-import {subscribePlayersSnapshot} from './redux/actions/players';
+import {subscribePlayersSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses} from './redux/actions/players';
 import {subscribeMatchesSnapshot} from "./redux/actions/matches";
 
 class App extends Component {
     componentDidMount() {
         this.props.subscribePlayersSnapshot();
         this.props.subscribeMatchesSnapshot();
+        this.props.subscribeConsecutiveWins();
+        this.props.subscribeConsecutiveLosses();
     }
 
     getActiveScreen() {
@@ -36,4 +38,4 @@ class App extends Component {
     }
 }
 
-export default connect(state => ({ currentScreen: state.screens.currentScreen}), {subscribePlayersSnapshot, subscribeMatchesSnapshot})(App);
+export default connect(state => ({ currentScreen: state.screens.currentScreen}), {subscribePlayersSnapshot, subscribeMatchesSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses})(App);
