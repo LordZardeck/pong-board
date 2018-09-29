@@ -1,36 +1,14 @@
 import React, {Component} from 'react';
 import Card from './Card';
+import {connect} from 'react-redux';
 import './Rankings.css';
-import firebase from '../firebase';
 import {getAbbreviatedPlayerName} from '../utilities/player';
 
 
 class Rankings extends Component {
-    state = {
-        playerCollection: {}
-    };
-
-    componentDidMount() {
-        // Updating the `someCollection` local state attribute when the Cloud Firestore 'someCollection' collection changes.
-        this.unregisterCollectionObserver = firebase.firestore().collection('players').onSnapshot(snapshot => {
-            const playerCollection = {};
-
-            snapshot.forEach((playerSnapshot) => {
-                playerCollection[playerSnapshot.id] = playerSnapshot.data();
-            });
-
-            this.setState({playerCollection});
-        });
-    }
-
-    componentWillUnmount() {
-        // Un-register the listeners.
-        this.unregisterCollectionObserver();
-    }
-
     getSortedPlayerCollection() {
-        let players = Object.keys(this.state.playerCollection).map(playerId => {
-            let player = this.state.playerCollection[playerId];
+        let players = Object.keys(this.props.registeredPlayers).map(playerId => {
+            let player = this.props.registeredPlayers[playerId];
             player.playerId = playerId;
 
             return player;
@@ -61,4 +39,4 @@ class Rankings extends Component {
     }
 }
 
-export default Rankings;
+export default connect(state => ({...state.players}))(Rankings);

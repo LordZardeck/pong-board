@@ -1,28 +1,27 @@
 import React, {Component} from 'react';
 import './App.css';
-import Leaderboards from './screens/Leaderboards';
+import LeaderBoards from './screens/Leaderboards';
 import RecordMatch from './screens/RecordMatch';
 import NavBar from './components/NavBar';
+import {connect} from 'react-redux';
+import {Screens} from "./redux/actions/screens";
+import {subscribePlayersSnapshot} from './redux/actions/players';
+import {subscribeMatchesSnapshot} from "./redux/actions/matches";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {activeScreen: 'record-match'};
+    componentDidMount() {
+        this.props.subscribePlayersSnapshot();
+        this.props.subscribeMatchesSnapshot();
     }
 
     getActiveScreen() {
-        switch (this.state.activeScreen) {
-            case 'record-match':
+        switch (this.props.currentScreen) {
+            case Screens.RecordMatch:
                 return <RecordMatch/>;
-            case 'leaderboards':
+            case Screens.LeaderBoards:
             default:
-                return <Leaderboards/>;
+                return <LeaderBoards/>;
         }
-    }
-
-    changeScreen(screen) {
-        this.setState({activeScreen: screen});
     }
 
     render() {
@@ -31,12 +30,10 @@ class App extends Component {
                 <div className="contents">
                     {this.getActiveScreen()}
                 </div>
-                <NavBar screens={{'leaderboards': 'Leaderboards', 'record-match': 'Record Match'}}
-                        activeScreen={this.state.activeScreen}
-                        onScreenChange={newScreen => this.changeScreen(newScreen)}/>
+                <NavBar />
             </div>
         );
     }
 }
 
-export default App;
+export default connect(state => ({ currentScreen: state.screens.currentScreen}), {subscribePlayersSnapshot, subscribeMatchesSnapshot})(App);

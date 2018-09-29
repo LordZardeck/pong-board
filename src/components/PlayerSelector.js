@@ -1,53 +1,15 @@
 import React, {Component} from 'react';
 import Card from './Card';
 import './PlayerSelector.css';
-import firebase from '../firebase';
 import {getAbbreviatedPlayerName} from '../utilities/player';
+import {connect} from 'react-redux';
 
 class PlayerSelector extends Component {
-    state = {
-        playerCollection: {}
-    };
-
-    constructor(props) {
-        super(props);
-
-        if (!(this.props.excludedPlayers instanceof Array)) {
-            this.props.excludedPlayers = [];
-        }
-    }
-
-    componentDidMount() {
-        // Updating the `someCollection` local state attribute when the Cloud Firestore 'someCollection' collection changes.
-        this.unregisterCollectionObserver = firebase.firestore().collection('players').onSnapshot(snapshot => {
-            const playerCollection = {};
-
-            snapshot.docs.forEach(playerSnapshot => {
-                playerCollection[playerSnapshot.id] = playerSnapshot.data();
-            });
-
-            this.setState({playerCollection})
-        });
-    }
-
-    componentWillUnmount() {
-        // Un-register the listeners.
-        this.unregisterCollectionObserver();
-    }
-
-    notifyPlayerSelect(playerId) {
-        if (typeof this.props.onPlayerSelect !== 'function') {
-            return;
-        }
-
-        this.props.onPlayerSelect(playerId, this.state.playerCollection[playerId]);
-    }
-
     getAvailablePlayers() {
-        return Object.keys(this.state.playerCollection)
-                     .filter(playerId => this.props.excludedPlayers.indexOf(playerId) < 0);
-    }
+        const excludedPlayers = [this.props.leftPlayer, this.props.rightPlayer];
 
+        return Object.keys(this.props.registeredPlayers).filter(playerId => excludedPlayers.indexOf(playerId) < 0);
+    }
 
     render() {
         return (
@@ -57,8 +19,9 @@ class PlayerSelector extends Component {
                         <ul>
                             {this.getAvailablePlayers().map(playerId => (
                                 <li key={playerId}>
-                                    <button onClick={() => this.notifyPlayerSelect(playerId)}>{getAbbreviatedPlayerName(
-                                        this.state.playerCollection[playerId])}</button>
+                                    <button onClick={() => this.props.onPlayerSelect(playerId)}>
+                                        {getAbbreviatedPlayerName(this.props.registeredPlayers[playerId])}
+                                    </button>
                                 </li>
                             ))}
                         </ul>
@@ -69,4 +32,8 @@ class PlayerSelector extends Component {
     }
 }
 
-export default PlayerSelector;
+export default connect(state => ({
+    ...state.players,
+    leftPlayer: state.matches.leftPlayer,
+    rightPlayer: state.matches.rightPlayer
+}), null)(PlayerSelector);

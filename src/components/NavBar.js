@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {changeScreen, Screens} from '../redux/actions/screens';
 import './NavBar.css';
 
+const screenNameDisplayMap = {
+    [Screens.LeaderBoards]: 'Leaderboards',
+    [Screens.RecordMatch]: 'Record Match'
+};
+
 class NavBar extends Component {
-    notifyScreenChange(newScreen) {
-        if (newScreen === this.props.activeScreen) {
-            return;
-        }
-
-        this.props.onScreenChange(newScreen);
-    }
-
     render() {
         return (
             <div className="navbar">
-                {Object.keys(this.props.screens).map(screen => (
-                    <div key={screen} className={'nav-link' + (this.props.activeScreen === screen ? ' active' : '')}>
-                        <button onClick={() => this.notifyScreenChange(screen)}>{this.props.screens[screen]}</button>
+                {Object.keys(screenNameDisplayMap).map(screen => (
+                    <div key={screen} className={'nav-link' + (this.props.currentScreen === screen ? ' active' : '')}>
+                        <button onClick={() => this.props.changeScreen(screen)}>{screenNameDisplayMap[screen]}</button>
                     </div>
                 ))}
             </div>
@@ -23,4 +22,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default connect(state => ({currentScreen: state.screens.currentScreen}), {changeScreen})(NavBar);
