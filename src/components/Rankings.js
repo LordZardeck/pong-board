@@ -12,7 +12,7 @@ class Rankings extends Component {
             player.playerId = playerId;
 
             return player;
-        });
+        }).filter(player => player.hidden !== true);
 
         players.sort((leftPlayer, rightPlayer) => rightPlayer.score - leftPlayer.score);
 

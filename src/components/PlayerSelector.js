@@ -8,7 +8,7 @@ class PlayerSelector extends Component {
     getAvailablePlayers() {
         const excludedPlayers = [this.props.leftPlayer, this.props.rightPlayer];
 
-        return Object.keys(this.props.registeredPlayers).filter(playerId => excludedPlayers.indexOf(playerId) < 0);
+        return Object.keys(this.props.registeredPlayers).filter(playerId => excludedPlayers.indexOf(playerId) < 0 && this.props.registeredPlayers[playerId].hidden !== true);
     }
 
     render() {
