@@ -2,7 +2,7 @@
     display: flex;
     flex: 1;
     padding-top: 8.33333%;
-    padding-bottom: calc(8.33333% + 56px);
+    padding-bottom: 8.33333%;
 }
 
 .record-match > * {

@@ -7,9 +7,9 @@
 
 .App .contents {
     flex: 1;
-    display: flex;
     padding-left: 8.33333%;
     padding-right: 8.33333%;
+    padding-top: env(safe-area-inset-top);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
