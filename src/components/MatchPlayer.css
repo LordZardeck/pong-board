@@ -48,7 +48,9 @@
     font-size: 1.4rem;
     font-weight: 500;
     outline: none;
+    /* clean-css ignore:start */
     width: calc(100% - 32px);
+    /* clean-css ignore:end */
 }
 
 .selected-player {

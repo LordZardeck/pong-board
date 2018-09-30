@@ -23,7 +23,9 @@ html, body {
 
 /* Fix for iOS PWA with notches as it keeps the height above the home bar, which is taken care of in the navigation component */
 html {
+    /* clean-css ignore:start */
     height: calc(100% + env(safe-area-inset-top));
+    /* clean-css ignore:end */
 }
 
 #root {
