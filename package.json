@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "gh-pages": "^1.2.0"
+  },
+  "resolutions": {
+    "react-scripts/css-loader": "1.0.x"
   }
 }
