@@ -35,10 +35,6 @@ export function subscribeMatchesSnapshot() {
                 return Promise.all([winnerUpdate, loserUpdate]);
             })).then(() => dispatch(receiveMatchesSnapshot(activityCollection)));
         });
-
-        firebase.firestore().collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-            window.matches = snapshot.docs;
-        });
     };
 }
 

@@ -1,5 +1,12 @@
 import {handleActions} from 'redux-actions';
-import {selectLeftPlayer, selectRightPlayer, resetMatch, updateLeftScore, updateRightScore, receiveMatchesSnapshot} from '../actions/matches';
+import {
+    receiveMatchesSnapshot,
+    resetMatch,
+    selectLeftPlayer,
+    selectRightPlayer,
+    updateLeftScore,
+    updateRightScore
+} from '../actions/matches';
 
 const initialState = {
     leftScore: 0,
@@ -20,8 +27,8 @@ const screens = handleActions(
             rightPlayer: payload
         }),
         [resetMatch]: state => ({
-            ...state,
-            ...initialState
+            ...initialState,
+            latestMatches: state.latestMatches
         }),
         [updateLeftScore]: (state, {payload}) => ({
             ...state,
