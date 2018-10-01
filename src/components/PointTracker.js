@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import * as actionsMap from '../redux/actions/matches';
 import './PointTracker.css';
 import {getAbbreviatedPlayerName} from '../utilities/player';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PlayerSelector from "./PlayerSelector";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import Card from "./Card";
 
 class PointTracker extends Component {
     state = {showPlayerSelector: false};
@@ -69,14 +69,16 @@ class PointTracker extends Component {
     render() {
         return (
             <div className="point-tracker">
-                <div className="active-players">
-                    {this.getLeftPlayerCard()}
-                    {this.getRightPlayerCard()}
-                    {this.props.leftPlayer === null || this.props.rightPlayer === null ? this.getPlayerPicker() : ''}
-                </div>
-                <hr/>
-                <button className="reset" onClick={() => this.props.resetMatch()}>Reset Match</button>
-                <button className="submit" onClick={() => this.props.completeMatch()}>Submit Match</button>
+                <Card>
+                    <div className="active-players">
+                        {this.getLeftPlayerCard()}
+                        {this.getRightPlayerCard()}
+                        {this.props.leftPlayer === null || this.props.rightPlayer === null ? this.getPlayerPicker() : ''}
+                    </div>
+                    <hr/>
+                    <button className="reset" onClick={() => this.props.resetMatch()}>Reset Match</button>
+                    <button className="submit" onClick={() => this.props.completeMatch()}>Submit Match</button>
+                </Card>
             </div>
         );
     }

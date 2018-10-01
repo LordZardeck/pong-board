@@ -38,6 +38,18 @@
     }
 
     .leaderboards .rankings li img {
-        display: none;
+        max-height: 50px;
+        max-width: 50px;
+        border-width: 2px;
+        margin: 2px;
+    }
+
+    .leaderboards .rankings ul li .player-name {
+        font-size: 2.2rem;
+    }
+
+    .leaderboards .rankings ul li .ranking-badge {
+        font-size: 2rem;
+        min-width: 65px;
     }
 }

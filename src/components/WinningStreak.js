@@ -6,20 +6,25 @@ import {getAbbreviatedPlayerName} from '../utilities/player';
 
 class WinningStreak extends Component {
     getStreakText() {
-        if(this.props.bestWinningStreak === null) {
-            return 'None';
+        if (this.props.bestWinningStreak === null) {
+            return <p className="streak-name">None</p>;
         }
 
         const playerData = this.props.registeredPlayers[this.props.bestWinningStreak];
 
-        return `${getAbbreviatedPlayerName(playerData)} - ${playerData.consecutiveWins}`;
+        return (
+            <p className="streak">
+                <span className="streak-name">{getAbbreviatedPlayerName(playerData)}</span>
+                <span className="streak-score">{playerData.consecutiveWins}</span>
+            </p>
+        );
     }
 
     render() {
         return (
             <div className="winning-streak">
                 <Card title="Best Winning Streak">
-                    <p className="streak">{this.getStreakText()}</p>
+                    {this.getStreakText()}
                 </Card>
             </div>
         );
