@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide|Montserrat');
 
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;

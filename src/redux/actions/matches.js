@@ -2,17 +2,30 @@ import {createActions} from 'redux-actions';
 import firebase from "../../firebase";
 import Elo from "arpad";
 
-export const {selectLeftPlayer, selectRightPlayer, resetMatch, updateLeftScore, updateRightScore, receiveMatchesSnapshot} =
+export const {selectLeftPlayer, selectRightPlayer, resetMatch, updateLeftScore, updateRightScore, receiveMatchesSnapshot, togglePlayerSelector} =
     createActions(
         'SELECT_LEFT_PLAYER',
         'SELECT_RIGHT_PLAYER',
         'RESET_MATCH',
         'UPDATE_LEFT_SCORE',
         'UPDATE_RIGHT_SCORE',
-        'RECEIVE_MATCHES_SNAPSHOT'
+        'RECEIVE_MATCHES_SNAPSHOT',
+        'TOGGLE_PLAYER_SELECTOR'
     );
 
 let unregisterCollectionObserver = null;
+
+export function scoreLeft(points) {
+    points = parseInt(points);
+
+    return updateLeftScore(isNaN(points) ? 0 : points);
+}
+
+export function scoreRight(points) {
+    points = parseInt(points);
+
+    return updateRightScore(isNaN(points) ? 0 : points);
+}
 
 export function subscribeMatchesSnapshot() {
     return dispatch => {

@@ -5,7 +5,8 @@ import {
     selectLeftPlayer,
     selectRightPlayer,
     updateLeftScore,
-    updateRightScore
+    updateRightScore,
+    togglePlayerSelector
 } from '../actions/matches';
 
 const initialState = {
@@ -13,7 +14,8 @@ const initialState = {
     rightScore: 0,
     leftPlayer: null,
     rightPlayer: null,
-    latestMatches: {}
+    latestMatches: {},
+    showPlayerSelector: false
 };
 
 const screens = handleActions(
@@ -41,6 +43,10 @@ const screens = handleActions(
         [receiveMatchesSnapshot]: (state, {payload}) => ({
             ...state,
             latestMatches: payload
+        }),
+        [togglePlayerSelector]: (state, {payload}) => ({
+            ...state,
+            showPlayerSelector: payload
         })
     },
     initialState

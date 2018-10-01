@@ -37,7 +37,6 @@ class MatchPlayer extends Component {
                         </Card>
                         : ''}
                 </div>
-                <PlayerSelector onPlayerSelect={playerId => this.props.onPlayerSelect(playerId)}/>
             </div>
         );
     }

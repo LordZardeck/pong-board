@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {Screens} from "./redux/actions/screens";
 import {subscribePlayersSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses} from './redux/actions/players';
 import {subscribeMatchesSnapshot} from "./redux/actions/matches";
+import PlayerSelector from "./components/PlayerSelector";
 
 class App extends Component {
     componentDidMount() {
@@ -33,9 +34,10 @@ class App extends Component {
                     {this.getActiveScreen()}
                 </div>
                 <NavBar />
+                {this.props.showPlayerSelector && <PlayerSelector />}
             </div>
         );
     }
 }
 
-export default connect(state => ({ currentScreen: state.screens.currentScreen}), {subscribePlayersSnapshot, subscribeMatchesSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses})(App);
+export default connect(state => ({ currentScreen: state.screens.currentScreen, showPlayerSelector: state.matches.showPlayerSelector}), {subscribePlayersSnapshot, subscribeMatchesSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses})(App);

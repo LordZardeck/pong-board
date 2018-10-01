@@ -26,10 +26,10 @@
 }
 
 .rankings ul li .ranking-badge {
-    border: .5px solid #5EC0D5;
+    border: .5px solid #e1e1c4;
     background: 0 0;
     border-radius: 5px;
-    color: #5EC0D5;
+    color: #e1e1c4;
     font-size: 2.2rem;
     align-self: center;
     padding: 3px 8px;
