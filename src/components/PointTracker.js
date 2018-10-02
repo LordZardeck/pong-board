@@ -76,8 +76,10 @@ class PointTracker extends Component {
                         {this.props.leftPlayer === null || this.props.rightPlayer === null ? this.getPlayerPicker() : ''}
                     </div>
                     <hr/>
-                    <button className="reset" onClick={() => this.props.resetMatch()}>Reset Match</button>
-                    <button className="submit" onClick={() => this.props.completeMatch()}>Submit Match</button>
+                    <div className="actions">
+                        <button className="reset" onClick={() => this.props.resetMatch()}>Reset</button>
+                        <button className="submit" onClick={() => this.props.completeMatch()}>Submit</button>
+                    </div>
                 </Card>
             </div>
         );

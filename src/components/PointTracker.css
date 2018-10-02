@@ -31,10 +31,21 @@
     align-content: center;
 }
 
+.point-tracker .player:first-child {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.point-tracker .player:last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
 .point-tracker .player.select {
     background: #e1e1c4;
     min-height: 100px;
     padding: 0;
+    max-width: 100%;
 }
 
 .point-tracker .player.select a {
@@ -84,17 +95,23 @@
     text-align: center;
 }
 
-.point-tracker .card > button {
-    border-radius: 64px;
-    padding: 0 2.6rem;
-    height: 2.8em;
-    font-size: 2rem;
-    border: none;
+.point-tracker .actions {
+    display: flex;
     width: 100%;
+}
+
+.point-tracker button.submit, .point-tracker button.reset {
+    border-radius: 5px;
+    padding: 0 1.7rem;
+    height: 2.8em;
+    font-size: 2.2rem;
+    border: none;
     max-width: 250px;
     text-transform: uppercase;
-    margin: 10px 0;
+    margin: 10px;
+    display: block;
     outline: none;
+    flex: 1;
 }
 
 .point-tracker button.submit {
@@ -110,7 +127,7 @@
 
 .point-tracker hr {
     background-color: grey;
-    margin: 40px 0;
+    margin: 10px 0 40px;
     width: 100%;
     height: 1px;
     border-width: 0;
