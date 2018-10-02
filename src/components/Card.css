@@ -18,3 +18,10 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .card {
+        margin: 5px;
+        width: calc(100% - 10px);
+    }
+}

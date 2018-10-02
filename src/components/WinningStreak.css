@@ -28,3 +28,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+    .winning-streak .card {
+        height: calc(100% - 10px);
+    }
+}
