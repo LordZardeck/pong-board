@@ -3,7 +3,7 @@
   "name": "Classy Llama Pong Leaderboard",
   "icons": [
     {
-      "src": "ping-pong.png",
+      "src": "paddles.png",
       "sizes": "512x512",
       "type": "image/png"
     }

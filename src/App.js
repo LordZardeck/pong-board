@@ -5,9 +5,10 @@ import RecordMatch from './screens/RecordMatch';
 import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import {Screens} from "./redux/actions/screens";
-import {subscribePlayersSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses} from './redux/actions/players';
+import {subscribeConsecutiveLosses, subscribeConsecutiveWins, subscribePlayersSnapshot} from './redux/actions/players';
 import {subscribeMatchesSnapshot} from "./redux/actions/matches";
 import PlayerSelector from "./components/PlayerSelector";
+import TopNav from "./components/TopNav";
 
 class App extends Component {
     componentDidMount() {
@@ -30,6 +31,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <TopNav/>
                 <div className="contents">
                     {this.getActiveScreen()}
                 </div>

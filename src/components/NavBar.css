@@ -2,14 +2,22 @@
     height: 56px;
     height: calc(56px + env(safe-area-inset-bottom));
     background-color: #1d1d1d;
-    display: flex;
     /* Make room for the home bar on iOS PWA */
     padding-bottom: 0;
     padding-bottom: env(safe-area-inset-bottom);
+    justify-content: center;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+    }
 }
 
 .navbar .nav-link {
     flex: 1;
+    max-width: 200px;
 }
 
 .navbar .nav-link button:hover {
