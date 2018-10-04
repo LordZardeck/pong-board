@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78342eda-5671-4eff-9564-0ea7fe99763b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PointTracker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PointTracker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Rankings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rankings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RecentActivity.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentActivity.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RecentActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentActivity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WinningStreak.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WinningStreak.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/matches.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/matches.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/players.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/players.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Leaderboards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Leaderboards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Leaderboards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Leaderboards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayerSelector.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayerSelector.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/functions/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,7 +18,7 @@
     <session id="373885079">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="231" />
+          <entry key="css" value="232" />
           <entry key="gitignore" value="2" />
           <entry key="html" value="13" />
           <entry key="js" value="475" />
@@ -42,7 +30,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="231" />
+          <entry key="CSS" value="232" />
           <entry key="HTML" value="13" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="27" />
@@ -55,21 +43,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2472" />
+          <entry key="css" value="2550" />
           <entry key="gitignore" value="31" />
           <entry key="html" value="65" />
           <entry key="js" value="8048" />
           <entry key="json" value="135" />
-          <entry key="txt" value="375" />
+          <entry key="txt" value="441" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2472" />
+          <entry key="CSS" value="2550" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="135" />
           <entry key="JavaScript" value="8048" />
-          <entry key="PLAIN_TEXT" value="406" />
+          <entry key="PLAIN_TEXT" value="472" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.rename.constructor" />
@@ -81,7 +69,7 @@
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="1" />
@@ -93,13 +81,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
+        <entry file="file://$PROJECT_DIR$/src/components/PlayerSelector.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -159,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/components/PlayerSelector.js" />
         <option value="$PROJECT_DIR$/build/service-worker.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/components/PlayerSelector.css" />
         <option value="$PROJECT_DIR$/src/components/WinningStreak.js" />
         <option value="$PROJECT_DIR$/src/components/ConsecutiveLoss.js" />
         <option value="$PROJECT_DIR$/src/components/PointTracker.js" />
@@ -182,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/components/TopNav.css" />
         <option value="$PROJECT_DIR$/src/components/TopNav.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/PlayerSelector.css" />
       </list>
     </option>
   </component>
@@ -326,7 +311,7 @@
       <workItem from="1538514127047" duration="907000" />
       <workItem from="1538526446834" duration="918000" />
       <workItem from="1538530778153" duration="2766000" />
-      <workItem from="1538687747565" duration="5523000" />
+      <workItem from="1538687747565" duration="5866000" />
     </task>
     <task id="LOCAL-00001" summary="Add better PWA support">
       <created>1538288388843</created>
@@ -384,18 +369,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538533355062</updated>
     </task>
-    <task id="LOCAL-00009" summary="Fix profiles showing for point tracker">
-      <created>1533160707852</created>
+    <task id="LOCAL-00009" summary="Compacted all components into one view">
+      <created>1538696729939</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1533160707852</updated>
+      <updated>1538696729939</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53011000" />
+    <option name="totallyTimeSpent" value="53354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="295" y="43" width="1365" height="987" extended-state="0" />
@@ -415,7 +400,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294979" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3286026" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Tail" order="12" />
       <window_info anchor="bottom" id="Floobits" order="13" />
@@ -452,7 +437,8 @@
     <MESSAGE value="Fix minor CSS issues, change background color" />
     <MESSAGE value="Minor CSS changes to card margins on mobile" />
     <MESSAGE value="Added top nav and new logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added top nav and new logo" />
+    <MESSAGE value="Compacted all components into one view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compacted all components into one view" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -577,13 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-86">
           <caret line="35" column="66" lean-forward="true" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlayerSelector.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -784,11 +763,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="282">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlayerSelector.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
         </state>
       </provider>
     </entry>
