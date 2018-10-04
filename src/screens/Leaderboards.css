@@ -8,11 +8,13 @@
     flex: 1;
 }
 
-.leaderboards > div > .streaks {
+.leaderboards > div .streaks {
     display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.leaderboards > div > .streaks > * {
+.leaderboards > div .streaks .winning-streaks {
     flex: 1;
 }
 
@@ -22,12 +24,24 @@
         align-content: baseline;
     }
 
-    .leaderboards .rankings, .leaderboards .recent-activity {
-        min-width: 100%;
+    .leaderboards-container .streaks .point-tracker {
+        display: none;
+    }
+}
+
+@media (min-width: 1281px) {
+    .leaderboards-second-column {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    .leaderboards .rankings {
-        order: -1;
+    .leaderboards-container > .point-tracker {
+        display: none;
+    }
+
+    .leaderboards-second-column > * {
+        flex: 1;
     }
 }
 

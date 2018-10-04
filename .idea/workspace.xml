@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78342eda-5671-4eff-9564-0ea7fe99763b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/TopNav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TopNav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PointTracker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PointTracker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Rankings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rankings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RecentActivity.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentActivity.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RecentActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecentActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WinningStreak.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WinningStreak.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/matches.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/matches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/players.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/players.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/Leaderboards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Leaderboards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/RecordMatch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/RecordMatch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Leaderboards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Leaderboards.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/functions/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,10 +30,10 @@
     <session id="373885079">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="207" />
+          <entry key="css" value="231" />
           <entry key="gitignore" value="2" />
           <entry key="html" value="13" />
-          <entry key="js" value="446" />
+          <entry key="js" value="475" />
           <entry key="json" value="30" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
@@ -38,11 +42,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="207" />
+          <entry key="CSS" value="231" />
           <entry key="HTML" value="13" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="27" />
-          <entry key="JavaScript" value="446" />
+          <entry key="JavaScript" value="475" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="3" />
@@ -51,21 +55,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2127" />
+          <entry key="css" value="2472" />
           <entry key="gitignore" value="31" />
           <entry key="html" value="65" />
-          <entry key="js" value="7255" />
+          <entry key="js" value="8048" />
           <entry key="json" value="135" />
-          <entry key="txt" value="338" />
+          <entry key="txt" value="375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2127" />
+          <entry key="CSS" value="2472" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="135" />
-          <entry key="JavaScript" value="7255" />
-          <entry key="PLAIN_TEXT" value="369" />
+          <entry key="JavaScript" value="8048" />
+          <entry key="PLAIN_TEXT" value="406" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.rename.constructor" />
@@ -77,11 +81,11 @@
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
     </session>
@@ -89,10 +93,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/TopNav.css">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="544">
+              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,10 +140,8 @@
         <option value="$PROJECT_DIR$/src/redux/actions/screens.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/match-players.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/components/RecentActivity.js" />
         <option value="$PROJECT_DIR$/src/components/Rankings.js" />
         <option value="$PROJECT_DIR$/src/redux/actions/players.js" />
-        <option value="$PROJECT_DIR$/src/redux/reducers/players.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_6.json" />
         <option value="$PROJECT_DIR$/functions/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -150,30 +155,33 @@
         <option value="$PROJECT_DIR$/src/components/MatchPlayer.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/screens/RecordMatch.js" />
-        <option value="$PROJECT_DIR$/src/redux/actions/matches.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/matches.js" />
         <option value="$PROJECT_DIR$/src/components/PlayerSelector.js" />
-        <option value="$PROJECT_DIR$/src/components/RecentActivity.css" />
         <option value="$PROJECT_DIR$/build/service-worker.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/components/Rankings.css" />
         <option value="$PROJECT_DIR$/src/components/PlayerSelector.css" />
         <option value="$PROJECT_DIR$/src/components/WinningStreak.js" />
         <option value="$PROJECT_DIR$/src/components/ConsecutiveLoss.js" />
         <option value="$PROJECT_DIR$/src/components/PointTracker.js" />
-        <option value="$PROJECT_DIR$/src/components/PointTracker.css" />
         <option value="$PROJECT_DIR$/src/components/Card.css" />
-        <option value="$PROJECT_DIR$/src/components/WinningStreak.css" />
-        <option value="$PROJECT_DIR$/src/screens/Leaderboards.css" />
-        <option value="$PROJECT_DIR$/src/screens/RecordMatch.css" />
         <option value="$PROJECT_DIR$/src/components/NavBar.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/NavBar.js" />
-        <option value="$PROJECT_DIR$/src/components/TopNav.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/manifest.json" />
+        <option value="$PROJECT_DIR$/src/redux/actions/matches.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/players.js" />
+        <option value="$PROJECT_DIR$/src/components/Rankings.css" />
+        <option value="$PROJECT_DIR$/src/components/WinningStreak.css" />
+        <option value="$PROJECT_DIR$/src/components/RecentActivity.js" />
+        <option value="$PROJECT_DIR$/src/components/RecentActivity.css" />
+        <option value="$PROJECT_DIR$/src/screens/RecordMatch.css" />
+        <option value="$PROJECT_DIR$/src/screens/Leaderboards.js" />
+        <option value="$PROJECT_DIR$/src/components/PointTracker.css" />
+        <option value="$PROJECT_DIR$/src/screens/Leaderboards.css" />
         <option value="$PROJECT_DIR$/src/components/TopNav.css" />
+        <option value="$PROJECT_DIR$/src/components/TopNav.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -197,10 +205,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="482" />
-    <option name="y" value="76" />
-    <option name="width" value="1127" />
-    <option name="height" value="1027" />
+    <option name="x" value="295" />
+    <option name="y" value="43" />
+    <option name="width" value="1365" />
+    <option name="height" value="987" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -237,6 +245,32 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cl-pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cl-pong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cl-pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cl-pong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cl-pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cl-pong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cl-pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cl-pong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -249,13 +283,13 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/redux/reducers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -291,7 +325,8 @@
       <workItem from="1538498056030" duration="501000" />
       <workItem from="1538514127047" duration="907000" />
       <workItem from="1538526446834" duration="918000" />
-      <workItem from="1538530778153" duration="2499000" />
+      <workItem from="1538530778153" duration="2766000" />
+      <workItem from="1538687747565" duration="5523000" />
     </task>
     <task id="LOCAL-00001" summary="Add better PWA support">
       <created>1538288388843</created>
@@ -342,12 +377,12 @@
       <option name="project" value="LOCAL" />
       <updated>1538518644448</updated>
     </task>
-    <task id="LOCAL-00008" summary="Re-order rankings on leaderboards">
-      <created>1533149280879</created>
+    <task id="LOCAL-00008" summary="Added top nav and new logo">
+      <created>1538533355062</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1533149280879</updated>
+      <updated>1538533355062</updated>
     </task>
     <task id="LOCAL-00009" summary="Fix profiles showing for point tracker">
       <created>1533160707852</created>
@@ -356,17 +391,17 @@
       <option name="project" value="LOCAL" />
       <updated>1533160707852</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47221000" />
+    <option name="totallyTimeSpent" value="53011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="482" y="76" width="1127" height="1027" extended-state="0" />
+    <frame x="295" y="43" width="1365" height="987" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="top" content_ui="combo" x="780" y="220" width="489" height="830" id="Project" order="0" type="WINDOWED" visible="true" weight="0.41424197" />
+      <window_info active="true" anchor="top" content_ui="combo" x="20" y="65" width="265" height="965" id="Project" order="0" type="WINDOWED" visible="true" weight="0.41424197" />
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -380,7 +415,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294979" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Tail" order="12" />
       <window_info anchor="bottom" id="Floobits" order="13" />
@@ -416,41 +451,13 @@
     <MESSAGE value="Fixed issue with name overflow" />
     <MESSAGE value="Fix minor CSS issues, change background color" />
     <MESSAGE value="Minor CSS changes to card margins on mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor CSS changes to card margins on mobile" />
+    <MESSAGE value="Added top nav and new logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added top nav and new logo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/static/css/main.8b00aebc.css" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/html-webpack-plugin/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/html-webpack-plugin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="291" column="13" selection-start-line="291" selection-start-column="7" selection-end-line="291" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/html-minifier/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-553">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -552,20 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/RecordMatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/actions/matches.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-131">
@@ -584,20 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-86">
           <caret line="35" column="66" lean-forward="true" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Rankings.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RecentActivity.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -622,20 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PointTracker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PointTracker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Card.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -643,24 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WinningStreak.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/RecordMatch.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -677,23 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/Leaderboards.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="33" selection-start-line="33" selection-end-line="53" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -702,23 +636,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#2#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopNav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NavBar.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -741,10 +659,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/matches.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/players.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/players.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Rankings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WinningStreak.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RecentActivity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RecentActivity.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PointTracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/RecordMatch.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/RecordMatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PointTracker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="120" column="1" lean-forward="true" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Leaderboards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Leaderboards.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TopNav.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="256">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TopNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

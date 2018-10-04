@@ -37,16 +37,13 @@ export function subscribeMatchesSnapshot() {
         unregisterCollectionObserver = firebase.firestore().collection('matches').orderBy('timestamp', 'desc').limit(20).onSnapshot(snapshot => {
             const activityCollection = {};
 
-            Promise.all(snapshot.docs.map((matchSnapshot) => {
+            snapshot.docs.forEach((matchSnapshot) => {
                 activityCollection[matchSnapshot.id] = matchSnapshot.data();
+                activityCollection[matchSnapshot.id].winner = activityCollection[matchSnapshot.id].winner.id;
+                activityCollection[matchSnapshot.id].loser = activityCollection[matchSnapshot.id].loser.id;
+            });
 
-                const winnerUpdate = activityCollection[matchSnapshot.id].winner.get()
-                    .then(winner => activityCollection[matchSnapshot.id].winner = winner.data());
-                const loserUpdate = activityCollection[matchSnapshot.id].loser.get()
-                    .then(loser => activityCollection[matchSnapshot.id].loser = loser.data());
-
-                return Promise.all([winnerUpdate, loserUpdate]);
-            })).then(() => dispatch(receiveMatchesSnapshot(activityCollection)));
+            dispatch(receiveMatchesSnapshot(activityCollection));
         });
     };
 }

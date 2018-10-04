@@ -18,23 +18,36 @@ class RecentActivity extends Component {
     render() {
         return (
             <div className="recent-activity">
-                <Card title="Recent Activities">
-                    <div className="list-container">
-                        <ol>
-                            {this.getRecentActivity().map(match => (
-                                <li key={match.matchId}>
-                                    <span
-                                        className="winner-name">{getAbbreviatedPlayerName(match.winner)}</span> beat <span
-                                    className="loser-name">{getAbbreviatedPlayerName(match.loser)}</span> ({match.winningScore} - {match.losingScore})
-                                    - <span className="activity-time">{moment(match.timestamp).fromNow()}</span>
-                                </li>
-                            ))}
-                        </ol>
-                    </div>
-                </Card>
+                <Card title="Recent Activity"/>
+                {this.getRecentActivity().map(match => {
+                    const winner = this.props.registeredPlayers[match.winner];
+                    const loser = this.props.registeredPlayers[match.loser];
+
+                    return (
+                        <div key={match.matchId} className="match">
+                            <Card>
+                                <div className="player winner">
+                                    <img src={winner.avatar}/>
+                                    <span className="name">{getAbbreviatedPlayerName(winner)}</span>
+                                </div>
+                                <div className="info">
+                                    <div className="score">{match.winningScore} - {match.losingScore}</div>
+                                    <span className="activity-time">{moment(match.timestamp).fromNow()}</span>
+                                </div>
+                                <div className="player loser">
+                                    <img src={loser.avatar}/>
+                                    <span className="name">{getAbbreviatedPlayerName(loser)}</span>
+                                </div>
+                            </Card>
+                        </div>
+                    );
+                })}
             </div>
         );
     }
 }
 
-export default connect(state => ({activityCollection: state.matches.latestMatches}))(RecentActivity);
+export default connect(state => ({
+    activityCollection: state.matches.latestMatches,
+    registeredPlayers: state.players.registeredPlayers
+}))(RecentActivity);

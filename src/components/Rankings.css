@@ -23,6 +23,7 @@
     font-size: 3rem;
     padding: 5px 15px;
     align-self: center;
+    white-space: nowrap;
 }
 
 .rankings ul li .ranking-badge {

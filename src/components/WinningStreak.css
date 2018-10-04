@@ -4,6 +4,7 @@
     padding: 13px 16px;
     line-height: 1.5;
     margin: 0;
+    white-space: nowrap;
 }
 
 .winning-streak .streak .streak-score:before {
@@ -12,25 +13,8 @@
     padding: 0 10px;
 }
 
-@media (max-width: 650px) {
-    .winning-streak .streak span {
-        display: block;
-    }
-
-    .winning-streak .streak .streak-score:before {
-        display: none;
-    }
-}
-
 .winning-streak .card {
-    height: calc(100% - 20px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-    .winning-streak .card {
-        height: calc(100% - 10px);
-    }
 }

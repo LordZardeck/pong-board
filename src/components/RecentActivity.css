@@ -2,6 +2,11 @@
     padding: 20px;
 }
 
+.recent-activity > .card .card-header {
+    padding: 15px;
+    margin: 0;
+}
+
 .recent-activity li {
     color: #f4f4f4;
     font-size: 1.4rem;
@@ -18,4 +23,79 @@
 
 .recent-activity .activity-time {
     color: #747474;
+}
+
+.match .card {
+    display: flex;
+    justify-content: center;
+}
+
+.match .player {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: center;
+    padding: 5px;
+    border-radius: 7px;
+    flex: 1;
+}
+
+.match .player:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.match .player:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.match .player img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: 3px solid #e1e1c4;
+    margin-bottom: 5px;
+}
+
+.match .loser {
+    background: #de6155;
+}
+
+.match .winner {
+    background: #3B576B;
+}
+
+.match .info {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 150px;
+}
+
+.match .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .match .player img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 2px solid #e1e1c4;
+        margin-bottom: 5px;
+    }
+
+    .match .card {
+        padding: 0;
+    }
+
+    .match .name {
+        font-size: 1.5rem;
+    }
 }

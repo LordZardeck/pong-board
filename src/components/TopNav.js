@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './TopNav.css';
 import paddles from "../pongboardlogo.png";
-import NavBar from "./NavBar";
 
 class TopNav extends Component {
     render() {
@@ -10,8 +9,6 @@ class TopNav extends Component {
                 <div className="logo">
                     <img src={paddles}/>
                 </div>
-
-                <NavBar/>
             </div>
         );
     }

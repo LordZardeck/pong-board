@@ -1,5 +1,9 @@
 import {handleActions} from 'redux-actions';
-import {receivePlayersSnapshot, receiveConsecutiveWinsSnapshot, receiveConsecutiveLossesSnapshot} from '../actions/players';
+import {
+    receiveConsecutiveLossesSnapshot,
+    receiveConsecutiveWinsSnapshot,
+    receivePlayersSnapshot
+} from '../actions/players';
 
 const initialState = {
     registeredPlayers: {},
@@ -15,8 +19,6 @@ const players = handleActions(
             payload.forEach(playerSnapshot => {
                 registeredPlayers[playerSnapshot.id] = playerSnapshot.data();
             });
-
-            window.players = Object.keys(registeredPlayers);
 
             return ({
                 ...state,

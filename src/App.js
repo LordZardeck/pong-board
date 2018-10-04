@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import LeaderBoards from './screens/Leaderboards';
 import RecordMatch from './screens/RecordMatch';
-import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import {Screens} from "./redux/actions/screens";
 import {subscribeConsecutiveLosses, subscribeConsecutiveWins, subscribePlayersSnapshot} from './redux/actions/players';
@@ -33,13 +32,15 @@ class App extends Component {
             <div className="App">
                 <TopNav/>
                 <div className="contents">
-                    {this.getActiveScreen()}
+                    <LeaderBoards/>
                 </div>
-                <NavBar />
-                {this.props.showPlayerSelector && <PlayerSelector />}
+                {this.props.showPlayerSelector && <PlayerSelector/>}
             </div>
         );
     }
 }
 
-export default connect(state => ({ currentScreen: state.screens.currentScreen, showPlayerSelector: state.matches.showPlayerSelector}), {subscribePlayersSnapshot, subscribeMatchesSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses})(App);
+export default connect(state => ({
+    currentScreen: state.screens.currentScreen,
+    showPlayerSelector: state.matches.showPlayerSelector
+}), {subscribePlayersSnapshot, subscribeMatchesSnapshot, subscribeConsecutiveWins, subscribeConsecutiveLosses})(App);
