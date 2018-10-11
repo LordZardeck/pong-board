@@ -14,31 +14,33 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin: 0 auto;
-}
-
-.top-nav .navbar {
-    display: flex;
-    height: auto;
-    flex: 1;
-    justify-content: flex-end;
-    padding-bottom: 0;
-}
-
-.top-nav .navbar .nav-link {
-    flex: initial;
 }
 
 .top-nav .logo img {
     height: 100%;
 }
 
-@media (max-width: 768px) {
-    .top-nav .navbar {
-        display: none;
-    }
+.top-nav .right-nav {
+    display: flex;
+}
 
-    .top-nav .logo {
-        margin: 0 auto;
+.top-nav button {
+    background: none;
+    border: none;
+    color: #e1e1c4;
+    font-size: 1.6rem;
+    display: block;
+    padding: 5px 15px;
+    outline: none;
+}
+
+.top-nav button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

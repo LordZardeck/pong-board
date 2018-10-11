@@ -3,7 +3,8 @@ import firebase from 'firebase';
 const app = firebase.initializeApp(
     {
         apiKey: 'AIzaSyBJh_ReonfLXYE07iFGXofe4FBc1g-ixxo',
-        projectId: 'classy-llama-pong'
+        projectId: 'classy-llama-pong',
+        authDomain: 'classy-llama-pong.firebaseapp.com'
     }
 );
 

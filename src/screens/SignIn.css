@@ -1,0 +1,56 @@
+.sign-in {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in .card {
+    width: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in .card .logo img {
+    max-width: 200px;
+}
+
+#firebaseui_container {
+    width: 100%;
+}
+
+#firebaseui_container .firebaseui-page-provider-sign-in.firebaseui-id-page-provider-sign-in {
+    margin-top: 20px;
+}
+
+#firebaseui_container .firebaseui-container {
+    background: transparent;
+    min-height: auto;
+}
+
+#firebaseui_container .firebaseui-container .firebaseui-callback-indicator-container {
+    height: auto;
+    margin-top: 20px;
+}
+
+#firebaseui_container .firebaseui-busy-indicator {
+    position: relative;
+}
+
+#firebaseui_container .mdl-progress.mdl-progress--indeterminate > .bar1,
+#firebaseui_container .mdl-progress.mdl-progress__indeterminate > .bar1 {
+    background-color: #ffffc4;
+}
+
+#firebaseui_container .mdl-progress.mdl-progress--indeterminate > .bar3,
+#firebaseui_container .mdl-progress.mdl-progress__indeterminate > .bar3 {
+    background: #ffffc4 none;
+}
+
+#firebaseui_container .mdl-progress>.bufferbar {
+    background-image: inherit;
+}

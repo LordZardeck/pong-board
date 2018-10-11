@@ -1,0 +1,49 @@
+.register-or-join button {
+    border-radius: 5px;
+    padding: 0 1.7rem;
+    font-size: 1.8rem;
+    border: none;
+    text-transform: uppercase;
+    margin: 0;
+    display: block;
+    outline: none;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    background-color: #e5c365;
+    color: #2C2C2C;
+}
+
+.register-or-join .panel-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register-or-join form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+.register-or-join input[type="text"] {
+    background: #e1e1c4;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    height: 80px;
+    color: #242422;
+    padding: 0 15px;
+    font-weight: 500;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.register-or-join form h1.card-header {
+    white-space: nowrap;
+    margin-bottom: 20px;
+    padding: 0;
+}
