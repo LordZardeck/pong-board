@@ -17,10 +17,22 @@ export function getUserTeams(userId) {
 
 export function createTeam(teamName) {
     return dispatch => {
-        return new Promise(resolve => setTimeout(() => resolve(dispatch(updateTeam({
-            teamId: 'asdfasd',
-            id: '42245'
-        }), 10 * 60 * 1000))));
+        return new Promise(
+            resolve =>
+                setTimeout(
+                    () => resolve(
+                        dispatch(
+                            updateTeam(
+                                {
+                                    teamId: 'asdfasd',
+                                    id: '42245'
+                                }
+                            )
+                        )
+                    ),
+                    5 * 1000
+                )
+        );
 
         // return firebaseCreateTeam({teamName}).then(result => {
         //     dispatch(updateTeam(result.data));
@@ -43,6 +55,10 @@ export function subscribeAuthStateChange() {
         }
 
         unregisterAuthStateChange = firebase.auth().onAuthStateChanged(user => {
+            if (user === null) {
+                return dispatch(changeAuth(user));
+            }
+
             return getUserTeams(user.uid).then(teams => {
                 teams = teams.map(team => ({...team.data(), id: team.id}));
                 dispatch(changeAuth({

@@ -5,6 +5,8 @@ import './RegisterOrJoin.css';
 import paddles from "../pongboardlogo.png";
 import connect from "react-redux/es/connect/connect";
 import {createTeam} from "../redux/actions/auth";
+import {Transition} from "react-spring";
+import Loader from "../components/Loader";
 
 class RegisterOrJoin extends React.Component {
     state = {newTeamName: '', isCreatingTeam: false};
@@ -24,24 +26,36 @@ class RegisterOrJoin extends React.Component {
 
     render() {
         return (
-            <div className="sign-in register-or-join">
+            <div className="sign-in register-or-join" style={this.props.style}>
                 <Card>
                     <div className="logo">
                         <img src={paddles}/>
                     </div>
-                    <div className={'panel-content ' + (this.state.isCreatingTeam ? 'loading' : '')}>
-                        <form onSubmit={event => this.createTeam(event)}>
-                            <h1 className="card-header">Register new Team</h1>
-                            <input value={this.state.newTeamName} onChange={event => this.setState({newTeamName: event.target.value})} type="text"/>
-                            <button className="submit">
-                                Create Team
-                            </button>
-                        </form>
-                        <form onSubmit={event => event.preventDefault()}>
-                            <h1 className="card-header">Join Existing Team</h1>
-                            <input type="text"/>
-                            <button className="submit">Join Team</button>
-                        </form>
+                    <div className="team-content">
+                        <Transition from={{ opacity: 0 }}
+                                    enter={{ opacity: 1 }}
+                                    leave={{ opacity: 0 }}>
+                            {
+                                this.state.isCreatingTeam
+                                    ? styles => <Loader key="1" style={styles}/>
+                                    : styles => (
+                                        <div key="2" style={styles} className={'panel-content ' + (this.state.isCreatingTeam ? 'loading' : '')}>
+                                            <form onSubmit={event => this.createTeam(event)}>
+                                                <h1 className="card-header">Register new Team</h1>
+                                                <input value={this.state.newTeamName} onChange={event => this.setState({newTeamName: event.target.value})} type="text"/>
+                                                <button className="submit">
+                                                    Create Team
+                                                </button>
+                                            </form>
+                                            <form onSubmit={event => event.preventDefault()}>
+                                                <h1 className="card-header">Join Existing Team</h1>
+                                                <input type="text"/>
+                                                <button className="submit">Join Team</button>
+                                            </form>
+                                        </div>
+                                    )
+                            }
+                        </Transition>
                     </div>
                 </Card>
             </div>

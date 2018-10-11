@@ -13,6 +13,25 @@
     color: #2C2C2C;
 }
 
+.register-or-join .card {
+    min-width: 320px;
+    transition: width 1s, height 1s;
+}
+
+.register-or-join .team-content {
+    display: grid;
+}
+
+.register-or-join .panel-content,
+.register-or-join .lds-ellipsis {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.register-or-join .lds-ellipsis {
+    margin: 40px auto;
+}
+
 .register-or-join .panel-content {
     display: flex;
     flex-wrap: wrap;

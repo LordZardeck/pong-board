@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import LeaderBoards from './screens/Leaderboards';
-import RecordMatch from './screens/RecordMatch';
 import {connect} from 'react-redux';
-import {Screens} from "./redux/actions/screens";
 import {subscribeConsecutiveLosses, subscribeConsecutiveWins, subscribePlayersSnapshot} from './redux/actions/players';
 import {subscribeMatchesSnapshot} from "./redux/actions/matches";
 import {subscribeAuthStateChange} from "./redux/actions/auth";
@@ -11,6 +9,7 @@ import PlayerSelector from "./components/PlayerSelector";
 import TopNav from "./components/TopNav";
 import SignIn from './screens/SignIn';
 import RegisterOrJoin from './screens/RegisterOrJoin';
+import {Transition} from "react-spring";
 
 class App extends Component {
     constructor(props) {
@@ -28,36 +27,36 @@ class App extends Component {
     }
 
     getActiveScreen() {
-        switch (this.props.currentScreen) {
-            case Screens.RecordMatch:
-                return <RecordMatch/>;
-            case Screens.LeaderBoards:
-            default:
-                return <LeaderBoards/>;
-        }
-    }
-
-    render() {
-        if(this.props.hasInitialized === false) {
-            return '';
+        if (this.props.hasInitialized === false) {
+            return styles => <div style={styles}/>;
         }
 
         if (this.props.user === null) {
-            return <SignIn/>;
+            return styles => <SignIn style={styles}/>;
         }
 
-        if(this.props.user.teams.length === 0) {
-            return <RegisterOrJoin/>
+        if (this.props.user.teams.length === 0) {
+            return styles => <RegisterOrJoin style={styles}/>;
         }
 
-        return (
-            <div className="App">
+        return styles => (
+            <div className="App" style={styles}>
                 <TopNav/>
                 <div className="contents">
                     <LeaderBoards/>
                 </div>
                 {this.props.showPlayerSelector && <PlayerSelector/>}
             </div>
+        );
+    }
+
+    render() {
+        return (
+            <Transition from={{opacity: 0}}
+                        enter={{opacity: 1}}
+                        leave={{opacity: 0}}>
+                {this.getActiveScreen()}
+            </Transition>
         );
     }
 }

@@ -19,7 +19,7 @@ const uiConfig = {
 export default class SignInScreen extends React.Component {
     render() {
         return (
-            <div className="sign-in">
+            <div className="sign-in" style={this.props.style}>
                 <Card>
                     <div className="logo">
                         <img src={paddles}/>

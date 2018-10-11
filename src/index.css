@@ -8,8 +8,6 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    width: 100%;
-    height: 100%;
     background: #447A77;
     color: #2c2c2c;
     font-size: 62.5%;
@@ -25,12 +23,25 @@ html, body {
     user-select: none;
 }
 
+html, body, #root, #root > * {
+    height: 100%;
+    /*height: calc(var(--vh, 1vh) * 100);*/
+    width: 100%;
+    /*width: calc(var(--vw, 1vw) * 100);*/
+}
+
 /* Fix for iOS PWA with notches as it keeps the height above the home bar, which is taken care of in the navigation component */
 html {
     height: calc(100% + env(safe-area-inset-top));
 }
 
 #root {
-    height: 100%;
-    width: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+}
+
+#root > * {
+    grid-column: 1;
+    grid-row: 1;
 }
