@@ -1,5 +1,5 @@
 {
-  "name": "cl-pong",
+  "name": "pong-board",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,7 @@
     "redux-actions": "^2.6.1",
     "redux-thunk": "^2.3.0"
   },
-  "homepage": "http://lordzardeck.github.io/CL-Pong",
+  "homepage": "http://lordzardeck.github.io/pong-board",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
