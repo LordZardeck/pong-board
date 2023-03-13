@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "runtime": "nodejs18"
+  },
   "hosting": {
     "public": "build",
     "ignore": [

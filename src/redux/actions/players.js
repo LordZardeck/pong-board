@@ -52,3 +52,18 @@ export function subscribePlayersSnapshot() {
     };
 }
 
+export function registerPlayer(firstName, lastName, avatar) {
+    return (dispatch, getState) => {
+        firebase.firestore().collection('/players').add({
+            firstName,
+            lastName,
+            avatar,
+            wins: 0,
+            losses: 0,
+            rank: 0,
+            score: 1000,
+            consecutiveWins: 0,
+            consecutiveLosses: 0
+        })
+    };
+}

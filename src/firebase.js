@@ -2,8 +2,8 @@ import firebase from 'firebase';
 
 const app = firebase.initializeApp(
     {
-        apiKey: 'AIzaSyBJh_ReonfLXYE07iFGXofe4FBc1g-ixxo',
-        projectId: 'classy-llama-pong'
+        apiKey: 'AIzaSyBBrSKq927rIw9-YuZJntdRdRDwLVmUe1o',
+        projectId: 'pongboard-c43c7'
     }
 );
 

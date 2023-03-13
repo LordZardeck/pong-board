@@ -1,0 +1,60 @@
+.add-player-modal {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 400px
+}
+
+.add-player-modal form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.add-player-modal form input {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.add-player-modal form input + input {
+    margin-top: 10px;
+}
+
+.add-player-submit {
+    border-radius: 5px;
+    padding: 1.2rem 3.7rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: none;
+    max-width: 200px;
+    width: 100%;
+    text-transform: uppercase;
+    display: block;
+    outline: none;
+    flex: 1;
+    background-color: #e5c365;
+    color: #2C2C2C;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.add-player-cancel {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.add-player-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+}

@@ -9,6 +9,9 @@ admin.initializeApp();
 exports.addPlayer = functions.https.onRequest((req, res) => {
     // Grab the text parameter.
     const {firstName, lastName, avatar} = req.query;
+
+    console.log(req.query)
+
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
     return admin.firestore().collection('/players').add({
         firstName,
